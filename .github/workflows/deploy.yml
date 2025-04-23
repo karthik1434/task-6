@@ -56,9 +56,11 @@ jobs:
         terraform apply -auto-approve
 
     - name: Wait for 10 minutes
+      if: always()
       run: sleep 600
   
     - name: Terraform Destroy
+      if: always()
       run: |
         cd terraform
         terraform destroy -auto-approve
