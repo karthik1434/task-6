@@ -54,3 +54,11 @@ jobs:
         cd terraform
         terraform init
         terraform apply -auto-approve
+
+    - name: Wait for 10 minutes
+      run: sleep 600
+  
+    - name: Terraform Destroy
+      run: |
+        cd terraform
+        terraform destroy -auto-approve
